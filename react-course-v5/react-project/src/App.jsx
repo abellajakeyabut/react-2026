@@ -1,11 +1,11 @@
-import List from '../../03-advanced-react/src/tutorial/05-leverage-javascript/starter/List'
-
+import Form from '../../03-advanced-react/src/tutorial/06-forms/starter/01-controlled-inputs'
+import '../../03-advanced-react/src/index.css'
 
 function App() {
   return (
     <>
     
-      <List></List>
+      <Form></Form>
     </>
   )
 }
