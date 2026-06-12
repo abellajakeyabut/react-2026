@@ -1,8 +1,8 @@
 import useFetch from './useFetch';
 
-const url = 'https://api.github.com/users/QuincyLarson';
 
 const FetchData = () => {
+  const url = 'https://api.github.com/users/QuincyLarson';
   const { isLoading, isError, data: user } = useFetch(url);
 
   // order matters
