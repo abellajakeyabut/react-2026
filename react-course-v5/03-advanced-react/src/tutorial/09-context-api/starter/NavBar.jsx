@@ -2,7 +2,8 @@ import NavLinks from "./NavLinks"
 import { useState, createContext,useContext} from 'react'
 
 const NavBarContext = createContext();
-const AppContext = () => useContext(NavBarContext)
+const  useAppContext = ()=> useContext(NavBarContext);
+
 const NavBar = () =>{
     
     const [user,setUser] = useState({name:'Bob'});
@@ -20,4 +21,4 @@ const NavBar = () =>{
     )
   
 }
-export {NavBar,AppContext}
+export {NavBar,useAppContext}
