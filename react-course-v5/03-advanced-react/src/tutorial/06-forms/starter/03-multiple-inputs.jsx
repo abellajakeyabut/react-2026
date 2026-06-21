@@ -1,35 +1,44 @@
-const MultipleInputs = () => {
-  return (
-    <div>
-      <form className='form'>
-        <h4>Multiple Inputs</h4>
-        {/* name */}
-        <div className='form-row'>
-          <label htmlFor='name' className='form-label'>
-            name
-          </label>
-          <input type='text' className='form-input' id='name' />
-        </div>
-        {/* email */}
-        <div className='form-row'>
-          <label htmlFor='email' className='form-label'>
-            Email
-          </label>
-          <input type='email' className='form-input' id='email' />
-        </div>
-        {/* email */}
-        <div className='form-row'>
-          <label htmlFor='password' className='form-label'>
-            Password
-          </label>
-          <input type='password' className='form-input' id='password' />
-        </div>
+import React, { useState } from 'react';
 
-        <button type='submit' className='btn btn-block'>
-          submit
-        </button>
-      </form>
-    </div>
+function ContactForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [user, setUser] = useState({ name: '', email: '' });
+
+  function handleInput(e) {
+    const target = e.target.id;
+    const value = e.target.value;
+    const name = e.target.id;
+
+    if (name === 'name') {
+      setName(value);
+    } else if (name === 'email') {
+      setEmail(value);
+    }else{
+      setPassword(value);
+    }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const user = { name, email ,email};
+    console.log(user);
+  }
+
+  return (
+    <form    onSubmit={handleSubmit}>
+      <label    htmlFor="name">Name:</label>
+      <input    type="text" id="name" value={name} onChange={handleInput}    />
+      <br       />
+      <label    htmlFor="email">Email:</label>
+      <input    type="email" id="email" value={email} onChange={handleInput}    />
+      <br       />
+      <label    htmlFor="password">Password:</label>
+      <input    type="password" id="password" value={password} onChange={handleInput}    />
+      <br       />
+      <button    type="submit">Submit</button>
+    </form>
   );
-};
-export default MultipleInputs;
+}
+export {ContactForm}
