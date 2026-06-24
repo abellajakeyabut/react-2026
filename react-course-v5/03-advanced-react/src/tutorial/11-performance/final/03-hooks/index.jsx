@@ -9,14 +9,7 @@ const LowerState = () => {
   const value = useMemo(() => slowFunction(), []);
   console.log(value);
 
-  const removePerson = useCallback(
-    (id) => {
-      console.log(people);
-      const newPeople = people.filter((person) => person.id !== id);
-      setPeople(newPeople);
-    },
-    [people]
-  );
+  
 
   return (
     <section>
