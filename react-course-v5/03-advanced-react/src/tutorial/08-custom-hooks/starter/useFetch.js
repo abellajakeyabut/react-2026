@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,3 +29,4 @@ const useFetch = (url) => {
 };
 
 export default useFetch;
+
