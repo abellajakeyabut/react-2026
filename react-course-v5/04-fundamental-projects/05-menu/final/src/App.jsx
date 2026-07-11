@@ -3,12 +3,13 @@ import Menu from './Menu';
 import Categories from './Categories';
 import Title from './Title';
 import items from './data';
-const allCategories = ['all', ...new Set(items.map((item) => item.category))];
+
+const allCategories = [...new Set(items.map((item) => item.category.trim().toLowerCase()];
 
 function App() {
   const [menuItems, setMenuItems] = useState(items);
   const [categories, setCategories] = useState(allCategories);
-
+  console.log(allCategories)
   const filterItems = (category) => {
     if (category === 'all') {
       setMenuItems(items);

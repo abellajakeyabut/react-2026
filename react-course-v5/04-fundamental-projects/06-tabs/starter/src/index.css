@@ -123,9 +123,12 @@ a {
 }
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 20px;
 }
-
+.list-item {
+  margin-bottom: 20px;
+  list-style-type: disc; 
+}
 .img {
   width: 100%;
   display: block;
@@ -298,6 +301,7 @@ ul {
   color: var(--grey-500);
   letter-spacing: var(--letterSpacing);
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .job-desc {
@@ -310,6 +314,7 @@ ul {
 
 .job-icon {
   color: var(--primary-500);
+  text-align: left;
 }
 
 .job-desc p {
