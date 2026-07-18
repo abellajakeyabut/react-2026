@@ -1,4 +1,10 @@
+import './index.css'
+import NavBar from './NavBar';
+import {links} from './data'
+import {social} from './data'
 const App = () => {
-  return <h2>Navbar Starter</h2>;
+  return (
+    <NavBar links={links} socials={social}/>
+  )
 };
 export default App;

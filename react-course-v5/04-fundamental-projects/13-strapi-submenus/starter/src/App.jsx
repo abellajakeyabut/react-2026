@@ -1,4 +1,9 @@
+import NavBar from "./NavBar";
 const App = () => {
-  return <h2>Strapi Starter</h2>;
+  return (
+    <main>
+      <NavBar></NavBar>
+    </main>
+  )
 };
 export default App;
