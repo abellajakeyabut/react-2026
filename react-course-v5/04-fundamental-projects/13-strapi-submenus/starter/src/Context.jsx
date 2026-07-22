@@ -12,7 +12,7 @@ export const AppProvider = ({children})=>{
         setIsSideBarOpen(false)
     }
     return (
-        <AppContext.Provider value={{isSidebarOpen,openSideBar,closeSideBar,pageId,setPage}}>
+        <AppContext.Provider value={{isSidebarOpen,openSideBar,closeSideBar,pageId,setPageId}}>
             {children}
         </AppContext.Provider>
     )
