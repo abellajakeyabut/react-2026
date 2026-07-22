@@ -5,8 +5,9 @@ import CartContainer from './CartContainer';
 function App() {
   return (
     <main>
-      <Navbar />
-      <CartContainer />
+      <Navbar></Navbar>
+      <CartContainer></CartContainer>
+    
     </main>
   );
 }
