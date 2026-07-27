@@ -15,7 +15,7 @@ const url = 'https://www.course-api.com/react-useReducer-cart-project';
 const AppContext = createContext();
 
 const initialState = {
-  loading: false,
+  loading: true,
   cart: new Map(),
 };
 
