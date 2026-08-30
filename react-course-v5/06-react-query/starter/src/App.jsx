@@ -2,20 +2,22 @@ import { ToastContainer } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import Form from './Form';
 import Items from './Items';
-import { useState } from 'react';
-const defaultItems = [
-  { id: nanoid(), title: 'walk the dog', isDone: false },
-  { id: nanoid(), title: 'wash dishes', isDone: false },
-  { id: nanoid(), title: 'drink coffee', isDone: true },
-  { id: nanoid(), title: 'take a nap', isDone: false },
-];
+import { useEffect, useState } from 'react';
+import { useFetchTasks } from './hooks/ReactQueryHooks';
+
 const App = () => {
-  const [items, setItems] = useState(defaultItems);
+const { isLoading, isError, data } = useFetchTasks();
+  if (isLoading) {
+    return <p style={{ marginTop: '1rem ' }}>Loading...</p>;
+  }
+  if (isError) {
+    return <p style={{ marginTop: '1rem ' }}>There was an error...</p>;
+  }
   return (
     <section className='section-center'>
       <ToastContainer position='top-center' />
       <Form />
-      <Items items={items} />
+      <Items items={data}/>
     </section>
   );
 };

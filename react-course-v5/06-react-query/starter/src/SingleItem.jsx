@@ -1,23 +1,28 @@
-const SingleItem = ({ item }) => {
+import { useCreateTask, useEditTask ,useDeleteTask} from "./hooks/ReactQueryHooks";
+
+const SingleItem = ({ id,title,isDone }) => {
+  const {isLoading,editTask} = useEditTask();
+  const {deleteTask,deleteTaskLoading} = useDeleteTask();
+
   return (
     <div className='single-item'>
       <input
         type='checkbox'
-        checked={item.isDone}
-        onChange={() => console.log('edit task')}
+        checked={isDone}
+        onChange={() => editTask({taskId:id, isDone:!isDone})}
       />
       <p
         style={{
           textTransform: 'capitalize',
-          textDecoration: item.isDone && 'line-through',
+          textDecoration: isDone && 'line-through',
         }}
       >
-        {item.title}
+        {title}
       </p>
       <button
         className='btn remove-btn'
         type='button'
-        onClick={() => console.log('delete task')}
+        onClick={() => deleteTask({taskId:id})}
       >
         delete
       </button>
